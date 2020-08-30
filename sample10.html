@@ -14,6 +14,10 @@
           <div id="app">
             <!-- clockを呼び出す -->
             <clock></clock>
+            <!-- slotによる切り替え -->
+            <!-- styleも切り替え -->
+            <clock style="color: blue">現在時刻</clock>
+
           </div>
         </div>
     </div>
@@ -40,7 +44,9 @@
           }
         },
         // テンプレートでtimeを表示
-        template: '<div>{{ time }}</div>'
+        // slotの切り替え
+        // :styleをつけると属性も変えられる
+        template: '<div :style=""><h2><slot>時計</slot></h2>{{ time }}</div>'
       })
       var app = new Vue({
         el:'#app'
