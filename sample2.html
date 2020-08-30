@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>タイトル</title>
+    <style>
+      /* vue.js でCSSを変更させる */
+      .error{
+        color: red;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">Hello world</h1>
+
+        <div class="frame__inner">
+          <div id="app">
+            <!-- class の前に : をつけるとvue.jsで使えるようになる -->
+            <p :class="error_class">赤文字で警告します</p>
+          </div>
+        </div>
+    </div>
+    <!-- vue.jsをCDNで使用。下記scriptを使用。 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 　vue.jsの内容 -->
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          // error_classを定義し error　とする
+          // そうするとclass error_classは　class=errorとしerrorのCSS color redを参照する
+          error_class: "error"
+        }
+      });
+    </script>
+</body>
+
+</html>
