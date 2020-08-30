@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>タイトル</title>
+    <style>
+      /* transitionのCSS */
+      .v-enter-active{
+        transition: opacity 3s;
+      }
+      .v-enter{
+        opacity: 0;
+      }
+      .v-enter-to{
+        opacity: 1s;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">Hello world</h1>
+
+        <div class="frame__inner">
+          <div id=app>
+            <!-- アニメーションをつける箇所を transitionで囲う -->
+            <transition appear>
+              <!-- vue.jsで宣言したmessageの内容を表示する -->
+              <div v-html="message"></div>
+            </transition>
+          </div>
+        </div>
+    </div>
+    <!-- vue.jsをCDNで使用。下記scriptを使用。 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 　vue.jsの内容 -->
+    <script>
+      // vue.jsではvarで宣言した方が様々なブラウザで使用できる
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Vue.jsを勉強しています"
+        }
+      })
+    </script>
+</body>
+
+</html>
