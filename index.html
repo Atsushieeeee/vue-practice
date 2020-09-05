@@ -9,10 +9,37 @@
 <body>
     <div class="frame">
         <h1 class="frame__title">Hello world</h1>
+        <div id="app">
+            <!-- vue の基本 -->
+            <!-- dataの中のmessageを参照 -->
+            <p> {{message}}</p>
+            <!-- dataの中のuserからfirstNameを指定 -->
+            <p> {{user.firstName}}</p>
+            <!-- dataの中のcolorsの配列から2番目(0から数えて)を指定 -->
+            <p> {{colors[1]}}</p>
+        </div>
 
         <div class="frame__inner">
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue ({
+            // 要素の指定
+            el:'#app',
+            // データバインディング
+            data: {
+                message: 'Hello Vue',
+                user: {
+                    firstName:"Yamada",
+                    lastName:'Taro',
+                    prefecture:'Tokyo'
+                },
+                // 配列
+                colors:['Red','Blue','Green']
+            }
+        })
+    </script>
 </body>
 
 </html>
