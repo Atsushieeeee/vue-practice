@@ -1,0 +1,11 @@
+<div id="app">
+  <h2>Bitcoin price</h2>
+  <ul>
+    <li v-for="(rate,currency) in bpi">{{ currency }} : {{ rate.rate_float }}</li>
+  </ul>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.20.0/dist/axios.min.js" integrity="sha256-KyY5SqyBmXeM0zfYBGU1tuqcstxpjkECApypY+CA4Z8=" crossorigin="anonymous"></script>
+<script src="test.js"></script>
