@@ -2,9 +2,14 @@
 
 <div id="app">
   <h2>Bitcoin price</h2>
-  <ul v-cloak>
-    <li v-for="(rate,currency) in bpi">{{ currency }} : {{ rate.rate_float | currencyDecimal }}</li>
-  </ul>
+  <section v-if="hasError">
+    Error.
+  </section>
+  <section v-else>
+    <ul v-cloak>
+      <li v-for="(rate,currency) in bpi">{{ currency }} : {{ rate.rate_float | currencyDecimal }}</li>
+    </ul>
+  </section>
 
 </div>
 
