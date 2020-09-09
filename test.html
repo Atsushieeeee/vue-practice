@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="style.css">
+
 <div id="app">
   <h2>Bitcoin price</h2>
-  <ul>
+  <ul v-cloak>
     <li v-for="(rate,currency) in bpi">{{ currency }} : {{ rate.rate_float | currencyDecimal }}</li>
   </ul>
 
