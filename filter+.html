@@ -1,0 +1,33 @@
+<div id="app">
+  <p>
+    {{jpyPrice}}
+  </p>
+
+  <p>
+    {{ jpyPrice | toUSD | numberFormat}}
+  </p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  Vue.filter('toUSD',function(jpy){
+    return jpy / 100
+  })
+
+  Vue.filter('numberFormat',function(value){
+    return value.toLocaleString()
+  })
+
+  var app = new Vue({
+    el:'#app',
+    data:{
+      jpyPrice:2980000
+    },
+    filters:{
+      numberFormat: function(value) {
+        return value.toLocaleString()
+      }
+    }
+  })
+</script>
