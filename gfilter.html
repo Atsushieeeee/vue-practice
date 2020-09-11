@@ -1,0 +1,26 @@
+<div id="app">
+  <h2>
+    Mustache
+  </h2>
+  <p>
+    {{price | numberFormat}}
+  </p>
+  <h2>
+    v-bind
+  </h2>
+  <input type="text" v-bind:value="price | numberFormat">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  Vue.filter('numberFormat',function(value){
+    return value.toLocaleString()
+  })
+  var app = new Vue({
+    el:'#app',
+    data:{
+      price:298000000
+    }
+  })
+</script>
