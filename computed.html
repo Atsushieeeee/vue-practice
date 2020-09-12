@@ -5,6 +5,9 @@
   <p>
     {{ reversedMessage}}
   </p>
+  <p>
+    {{ reversedMessageMethod()}}
+  </p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,6 +19,11 @@
     },
     computed:{
       reversedMessage: function(){
+        return this.message.split('').reverse().join('')
+      }
+    },
+    methods:{
+      reversedMessageMethod: function(){
         return this.message.split('').reverse().join('')
       }
     }
