@@ -1,0 +1,36 @@
+<div id="app"> 
+  <h2>
+    Computed
+  </h2>
+  <ol>
+    <li>{{ computedNumber}}</li>
+    <li>{{ computedNumber}}</li>
+    <li>{{ computedNumber}}</li>
+  </ol>
+  <h2>
+    Methods
+  </h2>
+  <ol>
+    <li>{{ methodsNumber() }}</li>
+    <li>{{ methodsNumber() }}</li>
+    <li>{{ methodsNumber() }}</li>
+  </ol>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    computed:{
+      computedNumber: function(){
+        return Math.random()
+      }
+    },
+    methods:{
+      methodsNumber: function(){
+        return Math.random()
+      }
+    }
+  })
+</script>
