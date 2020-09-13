@@ -1,0 +1,49 @@
+<div id="app">
+  <p>
+    firstName: <input type="text" v-model:value = "firstName">
+  </p>
+  <p>
+    lastName: <input type="text" v-model:value = "lastName">
+  </p>
+  <p>
+    fullName: {{ fullName }}
+  </p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+  // 監視プロパティ
+  
+  // var app = new Vue({
+  //   el:'#app',
+  //   data:{
+  //     firstName: '',
+  //     lastName:'',
+  //     fullName:''
+  //   },
+  //   watch: {
+  //     firstName: function(value) {
+  //       this.fullName = value + ' ' + this.lastName
+  //     },
+  //     lastName: function(value) {
+  //       this.fullName = this.firstName + ' ' + value
+  //     }
+  //   }
+  // })
+
+  // 算出プロパティ
+  var app = new Vue({
+    el:'#app',
+    data:{
+      firstName: '',
+      lastName:'',
+    },
+    computed:{
+      fullName: function(){
+        return this.firstName + ' ' + this.lastName
+      }
+    }
+  })
+</script>
