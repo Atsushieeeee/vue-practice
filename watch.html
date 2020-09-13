@@ -1,0 +1,25 @@
+<div id="app">
+  <p>
+    {{message}}
+  </p>
+  <p>
+    <input type="text" v-model:value="message">
+  </p>
+  <pre>{{ $data }}</pre>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      message:'Hello Vue.js'
+    },
+    watch:{
+      message: function(newValue, oldValue) {
+        console.log('new: %s, old: %s', newValue, oldValue)
+      }
+    }
+  })
+</script>
