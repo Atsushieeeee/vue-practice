@@ -1,0 +1,19 @@
+<div id="app">
+  <p>Hello <span v-bind:class="{large:isLarge}">Vue.js</span></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data: {
+      isLarge: true
+    }
+  })
+</script>
+
+<style>
+  .large{
+    font-size:36px
+  }
+</style>
