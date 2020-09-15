@@ -1,0 +1,37 @@
+<div id="app">
+  <p>
+    Hello <span v-bind:class="[isLarge ? largeClass : '',dangerClass]">Vue.js</span>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data: {
+      largeClass:{
+        large: true,
+        'bg-gray' : true
+      },
+      dangerClass:{
+        'text-danger': true
+      },
+      isLarge: true
+    }
+  })
+</script>
+
+<style>
+  .large{
+    font-size:36px;
+  }
+  .text-danger{
+    color: red;
+  }
+  .bg-gray{
+    background-color: gray;
+  }
+  .text-blue{
+    color: blue;
+  }
+</style>
