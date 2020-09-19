@@ -6,7 +6,7 @@
   <button @click="counter++">
     click
   </button>
-  <button @click="clickHandler('vue.js')">
+  <button @click="clickHandler($event,'vue.js')">
     click2
   </button>
 </div>
@@ -20,7 +20,8 @@
       message:''
     },
     methods:{
-      clickHandler:function(message){
+      clickHandler:function($event,message){
+        console.log($event)
         // this.counter++
         // console.log(event.target.tagName)
         // console.log(event.target.innnerHTML)
