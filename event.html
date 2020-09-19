@@ -5,6 +5,9 @@
   <button @click="counter++">
     click
   </button>
+  <button @click="clickHandler">
+    click2
+  </button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -13,6 +16,11 @@
     el:'#app',
     data:{
       counter: 0
+    },
+    methods:{
+      clickHandler:function(){
+        this.counter++
+      }
     }
   })
 </script>
