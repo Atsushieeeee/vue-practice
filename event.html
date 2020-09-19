@@ -18,8 +18,11 @@
       counter: 0
     },
     methods:{
-      clickHandler:function(){
+      clickHandler:function(event){
         this.counter++
+        console.log(event.target.tagName)
+        console.log(event.target.innnerHTML)
+        console.log(event.target.type)
       }
     }
   })
