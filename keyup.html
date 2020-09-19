@@ -1,0 +1,22 @@
+<div id="app">
+  <!-- ESCキーかSPACEキーを押すとクリアメソッドが動く -->
+  <input type="text" v-on:keyup.esc.space="clear" v-model="message">
+  <p>
+    {{ message }}
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      message:''
+    },
+    methods:{
+      clear:function(){
+        this.message = ''
+      }
+    }
+  })
+</script>
