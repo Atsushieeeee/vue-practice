@@ -1,11 +1,12 @@
 <div id="app">
   <p>
-    {{ counter }}
+    <!-- {{ counter }} -->
+    {{ message }}
   </p>
   <button @click="counter++">
     click
   </button>
-  <button @click="clickHandler">
+  <button @click="clickHandler('vue.js')">
     click2
   </button>
 </div>
@@ -15,14 +16,16 @@
   var app = new Vue({
     el:'#app',
     data:{
-      counter: 0
+      // counter: 0,
+      message:''
     },
     methods:{
-      clickHandler:function(event){
-        this.counter++
-        console.log(event.target.tagName)
-        console.log(event.target.innnerHTML)
-        console.log(event.target.type)
+      clickHandler:function(message){
+        // this.counter++
+        // console.log(event.target.tagName)
+        // console.log(event.target.innnerHTML)
+        // console.log(event.target.type)
+        this.message = message
       }
     }
   })
