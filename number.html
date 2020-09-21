@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="style.css">
+<div id="app">
+  <input type="number" v-model.number="age">
+  <p>
+    {{ age + 10 }}
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      age:0
+    }
+  })
+</script>
