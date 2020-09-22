@@ -7,11 +7,16 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-  Vue.component('hello-component',{
+  // Vue.component('hello-component',{
+  //   template: '<p>Hello</p>'
+  // })
+  var helloComponent = {
     template: '<p>Hello</p>'
-  })
+  }
   var app = new Vue({
     el:'#app',
-
+    components: {
+      'hello-component' : helloComponent
+    }
   })
 </script>
