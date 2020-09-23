@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="style.css">
+<div id="app">
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  Vue.component('button-counter',{
+    data: function(){
+      return {
+        count: 0
+      }
+    },
+    template:'<div><span>click:</span><button @click="count++">{{ count }}</button></div>'
+  })
+
+  var app = new Vue({
+    el:'#app',
+  })
+</script>
